@@ -78,9 +78,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/usr/local/etc/my.cnf',
-            },
+        'NAME': 'rleutz$mysite',
+        'USER': 'rleutz',
+        'PASSWORD': 'WMt%U&9PKy2R!00__',
+        'HOST': 'rleutz.mysql.pythonanywhere-services.com',
     }
 }
 
