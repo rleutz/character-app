@@ -7,9 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 """
 
-import os, sys
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+import os
 
 from django.core.wsgi import get_wsgi_application
 
