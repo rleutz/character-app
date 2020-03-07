@@ -7,3 +7,7 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
+gunicorn.conf.py
+/logs
+nginx.conf
+test.py
