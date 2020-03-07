@@ -9,10 +9,7 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 
 import os, sys
 
-path = os.path.abspath(os.path.join(__file__, '..', '..'))
-
-if path not in sys.path:
-    sys.path.appent(path)
+os.environ["DJANGO_SETTINGS_MODULE"] = "mysite.settings"
 
 from django.core.wsgi import get_wsgi_application
 
