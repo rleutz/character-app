@@ -18,6 +18,7 @@
     <tr>
     {% for data in list %}
     {% ifchanged data.data_type_category %}
+        </tr><tr>
         <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
         </tr>
     {% endifchanged %}
