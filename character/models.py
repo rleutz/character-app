@@ -26,4 +26,4 @@ class CharacterData(models.Model):
         return self.data_value
 
     class Meta:
-        ordering = ['data_type_category']
+        ordering = ['data_type_category', 'data_type_name']
