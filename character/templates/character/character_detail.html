@@ -15,13 +15,11 @@
   </table>
 
   <table>
-    <tr>
     {% for data in list %}
-    {% ifchanged data.data_type_category and forloop.counter|divisibleby:"3" %}
-      <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
+    {% ifchanged data.data_type_category %}
+      <tr>
+        <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
       </tr>
-    {% else %}
-      <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
     {% endifchanged %}
       <td><b>{{ data.data_type_name }}</b></td><td>{{ data.data_value }}</td>
       {% if forloop.last %}
