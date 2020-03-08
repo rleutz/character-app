@@ -2,6 +2,6 @@
 
 {% block content %}
     {% for data in character.characterdata_set.all %}
-    <h2>{{ data.data_type_category }} {{ data.data_type_name }} {{ data.data_value }}</h2>
+    <h2>{% cycle 'row1' 'row2 %'}{{ data.data_type_category }} {{ data.data_type_name }} {{ data.data_value }}</h2>
     {% endfor %}
 {% endblock %}
