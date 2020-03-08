@@ -19,16 +19,14 @@
     {% endfor %}
   </table>
 
-  <hr> <hr>
-
   <table>
     {% for data in list %}
     {% ifchanged data.data_type_category %}
       <tr>
-        <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data.data_type_category }}</h2></td>
+        <td colspan="6" style="padding:0 15px 0 15px;"><hr><hr></td>
       </tr>
       <tr>
-        <td colspan="4" style="padding:0 15px 0 15px;"><hr></td>
+        <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data.data_type_category }}</h2></td>
       </tr>
     {% endifchanged %}
       <td style="padding:0 15px 0 15px;"><b>{{ data.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{{ data.data_value }}</td>
