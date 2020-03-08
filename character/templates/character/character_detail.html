@@ -20,7 +20,6 @@
     {% ifchanged data.data_type_category %}
         <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
         </tr>
-      {% endif %}
     {% endifchanged %}
       <td><b>{{ data.data_type_name }}</b></td><td>{{ data.data_value }}</td>
       {% if forloop.last %}
