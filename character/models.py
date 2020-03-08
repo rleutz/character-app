@@ -16,19 +16,10 @@ class Character(models.Model):
     class Meta:
         ordering = ['slug']
 
-class DataType(models.Model):
-    type_name = models.CharField(max_length=50, unique=True)
-    type_category = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.type_name
-
-    class Meta:
-        ordering = ['type_name']
-
 class CharacterData(models.Model):
     data_value = models.CharField(max_length=255)
-    data_type = models.ForeignKey(DataType, on_delete=models.CASCADE)
+    data_type_name = models.CharField(max_length=50, unique=True)
+    data_type_category = models.CharField(max_length=50)
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
 
     def __str__(self):
