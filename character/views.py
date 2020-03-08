@@ -6,6 +6,6 @@ def character_list(request):
     return render(request, 'character/character_list.html', {'characters': characters})
 
 def character_detail(request, pk):
-    character = Character.objects.get(pk=pk)
+    character = Character.objects.get(pk=pk).exclude(data_type_name='Slug')
     name = CharacterData.objects.get(character_id=pk, data_type_name='Slug')
     return render(request, 'character/character_detail.html', {'character': character, 'name': name})
