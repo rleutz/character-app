@@ -18,9 +18,6 @@
     <tr>
     {% for data in list %}
     {% ifchanged data.data_type_category %}
-      {% if forloop.counter|divisibleby:"3" %}
-        <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
-      {% else %}
         <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
         </tr>
       {% endif %}
