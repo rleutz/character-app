@@ -2,6 +2,6 @@
 
 {% block content %}
     {% for data in character.characterdata_set.all %}
-    <h2>{% ifchanged 'changed to ' {{data.data_type_category}} %}{% endifchanged %}{{ data.data_type_category }} {{ data.data_type_name }} {{ data.data_value }}</h2>
+    <h2>{% ifchanged 'changed' %}{% endifchanged %}{{ data.data_type_category }} {{ data.data_type_name }} {{ data.data_value }}</h2>
     {% endfor %}
 {% endblock %}
