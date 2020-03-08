@@ -7,7 +7,7 @@ def character_list(request):
 
 def character_detail(request, pk):
     character = Character.objects.get(pk=pk)
-    charlist = CharacterData.objects.filter(data_type_category='Character', character_id=pk)
+    charlist = CharacterData.objects.exclude(data_type_name='Slug').filter(data_type_category='Character', character_id=pk)
     list = CharacterData.objects.exclude(data_type_category = 'Character').filter(character_id=pk)
     name = CharacterData.objects.get(character_id=pk, data_type_name='Slug')
     return render(request, 'character/character_detail.html', {'character': character, 'name': name, 'list': list, 'charlist': charlist})

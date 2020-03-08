@@ -3,10 +3,16 @@
 {% block content %}
 
   <h1>{{ name }}</h1>
-
-  {% for chardata in charlist %}
-    {{ chardata.data_type_name }}
-  {% endfor %}
+  <table>
+    <tr>
+      <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
+    </tr>
+    {% for chardata in charlist %}
+    <tr>
+      <td><b>{{ data.data_type_name }}</b></td> <td>{{ data.data_value }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 
   <table>
     {% for data in list %}
