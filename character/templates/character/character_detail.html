@@ -24,6 +24,7 @@
         {% if forloop.counter|divisibleby:"3" %}
           </tr><tr>
         {% endif %}
+      {% endif %}
       {% ifchanged data.data_type_category %}
         {% if forloop.counter|divisibleby:"3" %}
           <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
