@@ -2,6 +2,6 @@
 
 {% block content %}
   {% for character in characters %}
-    <p>{{ character.slug }}</p>
+    <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug }}</a></p>
   {% endfor %}
 {% endblock %}
