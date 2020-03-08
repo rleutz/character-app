@@ -1,7 +1,7 @@
-<html>
-<body>
-{% for character in characters %}
-  {{ character }}
-{% endfor %}
-</body>
-</html>
+{% extends 'character/base.html' %}
+
+{% block content %}
+  {% for character in characters %}
+    <p>{{ character.slug }}</p>
+  {% endfor %}
+{% endblock %}

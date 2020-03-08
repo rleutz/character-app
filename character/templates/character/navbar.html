@@ -1,0 +1,11 @@
+<nav class="navbar fixed-top navbar-light bg-dark">
+  <button onclick="window.location.href = '/filter/?owner=RestiveFlame';">RestiveFlame's Characters</button>
+  <button onclick="window.location.href = '/filter/?owner=Trinkah';">Trinkah's Characters</button>
+  <form action="/upload/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Refresh Character Data</button>
+  </form>
+  {% block appendnav %}
+
+  {% endblock %}
+</nav>
