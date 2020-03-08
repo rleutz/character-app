@@ -5,14 +5,16 @@
   <h1>{{ name }}</h1>
   <table>
     <tr>
-      <td colspan="2"><h2>Character Stats</h2></td>
+      <td colspan="2"style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
     </tr>
     {% for chardata in charlist %}
     <tr>
-      <td><b>{{ chardata.data_type_name }}</b></td> <td>{{ chardata.data_value }}</td>
+      <tdstyle="padding:0 15px 0 15px;"><b>{{ chardata.data_type_name }}</b></td> <tdstyle="padding:0 15px 0 15px;">{{ chardata.data_value }}</td>
     </tr>
     {% endfor %}
   </table>
+
+  <hr> <hr>
 
   <table>
     {% for data in list %}
