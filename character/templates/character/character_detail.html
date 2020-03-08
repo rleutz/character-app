@@ -4,6 +4,10 @@
 
   <h1>{{ name }}</h1>
 
+  {% for chardata in charlist %}
+    {{ chardata.data_type_name }}
+  {% endfor %}
+
   <table>
     {% for data in list %}
       {% ifchanged data.data_type_category %}
