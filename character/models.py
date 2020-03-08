@@ -18,7 +18,7 @@ class Character(models.Model):
 
 class CharacterData(models.Model):
     data_value = models.CharField(max_length=255)
-    data_type_name = models.CharField(max_length=50, unique=True)
+    data_type_name = models.CharField(max_length=50)
     data_type_category = models.CharField(max_length=50)
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
 
