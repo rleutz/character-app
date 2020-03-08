@@ -1,5 +1,7 @@
 {% extends 'character/base.html' %}
 
 {% block content %}
-    <h2>{{ character }}</h2>
+    {% for data in character.characterdata_set.all() %}
+    <h2>{{ data.data_type_name }}</h2>
+    {% endfor %}
 {% endblock %}
