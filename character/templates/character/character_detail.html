@@ -4,6 +4,8 @@
 
 {% with character.characterdata_set.all as list %}
 
+<h1>{{ name }}</h1>
+
   {% for data in character.characterdata_set.all %}
     {% if data.data_type_name == 'Slug' %}
       <h1>{{ data.data_value}}</h1>
