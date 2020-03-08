@@ -8,11 +8,16 @@
       {% endif %}
   {% endfor %}
 
-  {% for data in character.characterdata_set.all %}
-    {% ifchanged data.data_type_category %}
-      <hr>{{ data.data_type_category }}
-    {% endifchanged %}
-    {{ data.data_type_name }}
-    {{ data.data_value }}
-  {% endfor %}
+  <table>
+    {% for data in character.characterdata_set.all %}
+      {% ifchanged data.data_type_category %}
+        <tr>
+          <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
+        </tr>
+      {% endifchanged %}
+      <tr>
+        <td><b>{{ data.data_type_name }}</b></td> <td>{{ data.data_value }}</td>
+      </tr>
+    {% endfor %}
+  </table>
 {% endblock %}
