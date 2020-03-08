@@ -29,7 +29,7 @@
         <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data.data_type_category }}</h2></td>
       </tr>
     {% endifchanged %}
-      <td style="padding:0 15px 0 15px;"><b>{{ data.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{{ data.data_value }}</td>
+      <td style="padding:0 15px 0 15px;"><b>{{ data.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{% if data.data_value < 50 %}Needs work {{ data.data_value }} {% else %} {{ data.data_value }} {% endif %}</td>
       {% if forloop.last %}
         </tr>
       {% else %}
