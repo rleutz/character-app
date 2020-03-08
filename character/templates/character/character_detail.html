@@ -5,7 +5,7 @@
   <h1>{{ name }}</h1>
   <table>
     <tr>
-      <td colspan="2"><h2>"Character Stats"</h2></td>
+      <td colspan="2"><h2>Character Stats</h2></td>
     </tr>
     {% for chardata in charlist %}
     <tr>
@@ -15,15 +15,23 @@
   </table>
 
   <table>
+    <tr>
     {% for data in list %}
-      {% ifchanged data.data_type_category %}
-        <tr>
-          <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
+      <td><b>{{ data.data_type_name }}</b></td><td>{{ data.data_value }}</td>
+      {% if forloop.last %}
         </tr>
+      {% else %}
+        {% if forloop.counter|divisibleby:"3" %}
+          </tr><tr>
+        {% endif %}
+      {% ifchanged data.data_type_category %}
+        {% if forloop.counter|divisibleby:"3" %}
+          <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
+        {% else %}
+          <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
+          </tr>
+        {% endif %}
       {% endifchanged %}
-      <tr>
-        <td><b>{{ data.data_type_name }}</b></td> <td>{{ data.data_value }}</td>
-      </tr>
     {% endfor %}
   </table>
 {% endblock %}
