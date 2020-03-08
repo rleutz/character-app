@@ -6,5 +6,5 @@ def character_list(request):
     return render(request, 'character/character_list.html', {'characters': characters})
 
 def character_detail(request, pk):
-    character = Character.objects.get(pk=pk).order_by(data_type_category)
+    character = Character.objects.get(pk=pk)
     return render(request, 'character/character_detail.html', {'character': character})
