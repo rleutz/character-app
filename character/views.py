@@ -7,5 +7,5 @@ def character_list(request):
 
 def character_detail(request, pk):
     # c = get_object_or_404(Character, pk=pk)
-    character = c.characterdata_set.filter(pk=pk)
+    character = characterdata_set.filter(pk=pk)
     return render(request, 'character/character_detail.html', {'character': character})
