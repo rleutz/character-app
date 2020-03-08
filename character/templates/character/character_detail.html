@@ -5,7 +5,7 @@
   <h1>{{ name }}</h1>
 
   <table>
-    {% for data in character.characterdata_set.all %}
+    {% for data in list %}
       {% ifchanged data.data_type_category %}
         <tr>
           <td colspan="2"><h2>{{ data.data_type_category }}</h2></td>
