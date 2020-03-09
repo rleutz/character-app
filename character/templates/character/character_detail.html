@@ -6,6 +6,21 @@
     <td style="padding:0 15px 0 15px;"><h1>{{ name }}</h1></td>
   </table>
 
+  {% regroup chardata by data_type_category as chardata_list %}
+
+  <ul>
+    {% for data_type_category in chardata_list %}
+      <li>{{ data_type_category.grouper }}
+      <ul>
+        {% for value in data_type_category %}
+          <li>{{ value.data_type_name }}: {{ value.data_value }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+  </ul>
+
+
   <hr> <hr>
 
   <table>
