@@ -12,7 +12,7 @@
     {% for data_type_category in chardata_list %}
       <li>{{ data_type_category.grouper }}
       <ul>
-        {% for value in data_type_category %}
+        {% for value in data_type_category.list %}
           <li>{{ value.data_type_name }}: {{ value.data_value }}</li>
         {% endfor %}
       </ul>
