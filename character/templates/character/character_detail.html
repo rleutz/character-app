@@ -6,25 +6,6 @@
     <td style="padding:0 15px 0 15px;"><h1>{{ name }}</h1></td>
   </table>
 
-  {% regroup list by data_type_category as chardata_list %}
-
-  <table>
-    {% for data_type_category in chardata_list %}
-    <tr>
-      <td colspan="8" style="padding:0 15px 0 15px;"><hr><hr></td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data_type_category.grouper }}</h2></td>
-    </tr>
-      {% for value in data_type_category.list %}
-        <td style="padding:0 15px 0 15px;"><b>{{ value.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{{ value.data_value }}</td></tr>
-        {% endfor %}
-        {% endfor %}
-  </table>
-
-
-  <hr> <hr>
-
   <table>
     <tr>
       <td colspan="2" style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
@@ -35,6 +16,33 @@
     </tr>
     {% endfor %}
   </table>
+
+  {% regroup list by data_type_category as chardata_list %}
+
+  <table>
+    {% for data_type_category in chardata_list %}
+      <tr>
+        <td colspan="8" style="padding:0 15px 0 15px;"><hr><hr></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data_type_category.grouper }}</h2></td>
+      </tr>
+      {% for value in data_type_category.list %}
+        <td style="padding:0 15px 0 15px;"><b>{{ value.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{{ value.data_value }}</td>
+        {% if forloop..last %}
+          </tr>
+        {% else %}
+          {% if forloop.counter|divisibleby:"3" %}
+            </tr></tr>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </table>
+
+
+  <hr> <hr>
+
 
   <table>
     {% for data in list %}
