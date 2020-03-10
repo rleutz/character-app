@@ -4,6 +4,9 @@ from django.utils import timezone
 
 class Character(models.Model):
     slug = models.SlugField(unique=True, max_length=255)
+    mule_for = models.CharField(max_length=255, null=True, blank=True)
+    character_main = models.BooleanField(default=False)
+    image = models.ImageField(upload_to='profile_image', blank=True)
 
     def get_absolute_url(self):
         return reverse(

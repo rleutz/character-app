@@ -7,7 +7,7 @@ def character_list(request):
 
 def character_detail(request, pk):
     character = Character.objects.get(pk=pk)
-    # charlist = CharacterData.objects.exclude(data_type_name='Slug').filter(data_type_category='Character', character_id=pk)
+
     charlist = CharacterData.objects.filter(data_type_category='Character', character_id=pk)
     for d in charlist:
         if(d.data_type_name == 'Alliance'):
