@@ -11,6 +11,15 @@
 
       <table>
         <tr>
+          <td colspan=2>
+              {% if character.image %}
+              <img src="{{ character.image.url }}" width='240' class="img-thumbnail">
+              {% else %}
+              <h2>UPLOAD IMAGE</h2>
+              {% endif %}
+          </td>
+        </tr>
+        <tr>
           <td colspan="2" style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
         </tr>
         <tr>
