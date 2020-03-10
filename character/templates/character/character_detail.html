@@ -13,7 +13,7 @@
         <tr>
           <td colspan=2>
               {% if character.image %}
-              <img src="/character/{{ character.image.url }}" width='240' class="img-thumbnail">
+              <img src="{{ character.image.url }}" width='240' class="img-thumbnail">
               {% else %}
               <h2>UPLOAD IMAGE</h2>
               {% endif %}
