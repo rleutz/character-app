@@ -3,18 +3,37 @@
 {% block content %}
 
   <table>
-    <td style="padding:0 15px 0 15px;"><h1>{{ name }}</h1></td>
+    <td style="padding:0 15px 0 15px;"><h1>{{ cname }}</h1></td>
   </table>
 
   <table>
     <tr>
       <td colspan="2" style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
     </tr>
-    {% for chardata in charlist %}
     <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ chardata.data_type_name }}</b></td> <td style="padding:0 15px 0 15px;">{{ chardata.data_value }}</td>
+      <td style="padding:0 15px 0 15px;"><b>{{ cracetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ crace }}</td>
     </tr>
-    {% endfor %}
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cclass }}</td>
+    </tr>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ cleveltag }}</b></td> <td style="padding:0 15px 0 15px;">{{ clevel }}</td>
+    </tr>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ calliancetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ calliance }}</td>
+    </tr>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ cgendertag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cgender }}</td>
+    </tr>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ cmagickatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cmagicka }}</td>
+    </tr>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ cstaminatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cstamina }}</td>
+    </tr>
+    <tr>
+      <td style="padding:0 15px 0 15px;"><b>{{ chealthtag }}</b></td> <td style="padding:0 15px 0 15px;">{{ chealth }}</td>
+    </tr>
   </table>
 
   {% regroup list by data_type_category as chardata_list %}
