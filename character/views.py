@@ -18,7 +18,7 @@ def character_detail(request, pk):
             cclass = d.data_value
         if(d.data_type_name == 'Gender'):
             cgendertag = d.data_type_name
-            cgenderalliance = d.data_value
+            cgender = d.data_value
         if(d.data_type_name == 'Health'):
             chealthtag = d.data_type_name
             chealth = d.data_value
