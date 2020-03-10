@@ -6,10 +6,6 @@
   <div class="row">
     <div class="col-sm-3 col-md-6 col-lg-4">
       <table>
-        <td style="padding:0 15px 0 15px;"><h1>{{ cname }}</h1></td>
-      </table>
-
-      <table>
         <tr>
           <td colspan=2>
               {% if character.image %}
@@ -20,7 +16,15 @@
           </td>
         </tr>
         <tr>
+          <td colspan=2>
+              <b>Character Details</b>
+          </td>
+        </tr>
+        <tr>
           <td colspan="2" style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ cname }}</td>
         </tr>
         <tr>
           <td style="padding:0 15px 0 15px;"><b>{{ cracetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ crace }}</td>
