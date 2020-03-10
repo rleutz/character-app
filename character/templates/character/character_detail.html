@@ -2,61 +2,70 @@
 
 {% block content %}
 
-  <table>
-    <td style="padding:0 15px 0 15px;"><h1>{{ cname }}</h1></td>
-  </table>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4">
+      <table>
+        <td style="padding:0 15px 0 15px;"><h1>{{ cname }}</h1></td>
+      </table>
 
-  <table>
-    <tr>
-      <td colspan="2" style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ cracetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ crace }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cclass }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ cleveltag }}</b></td> <td style="padding:0 15px 0 15px;">{{ clevel }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ calliancetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ calliance }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ cgendertag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cgender }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ cmagickatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cmagicka }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ cstaminatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cstamina }}</td>
-    </tr>
-    <tr>
-      <td style="padding:0 15px 0 15px;"><b>{{ chealthtag }}</b></td> <td style="padding:0 15px 0 15px;">{{ chealth }}</td>
-    </tr>
-  </table>
+      <table>
+        <tr>
+          <td colspan="2" style="padding:0 15px 0 15px;"><h2>Character Stats</h2></td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ cracetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ crace }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cclass }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ cleveltag }}</b></td> <td style="padding:0 15px 0 15px;">{{ clevel }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ calliancetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ calliance }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ cgendertag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cgender }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ cmagickatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cmagicka }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ cstaminatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cstamina }}</td>
+        </tr>
+        <tr>
+          <td style="padding:0 15px 0 15px;"><b>{{ chealthtag }}</b></td> <td style="padding:0 15px 0 15px;">{{ chealth }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-9 col-md-6 col-lg-8">
+      {% regroup list by data_type_category as chardata_list %}
 
-  {% regroup list by data_type_category as chardata_list %}
-
-  <table>
-    {% for data_type_category in chardata_list %}
-      <tr>
-        <td colspan="8" style="padding:0 15px 0 15px;"><hr><hr></td>
-      </tr>
-      <tr>
-        <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data_type_category.grouper }}</h2></td>
-      </tr>
-      {% for value in data_type_category.list %}
-        <td style="padding:0 15px 0 15px;"><b>{{ value.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{{ value.data_value }}</td>
-        {% if forloop..last %}
+      <table>
+        {% for data_type_category in chardata_list %}
+          <tr>
+            <td colspan="8" style="padding:0 15px 0 15px;"><hr><hr></td>
           </tr>
-        {% else %}
-          {% if forloop.counter|divisibleby:"3" %}
-            </tr></tr>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </table>
+          <tr>
+            <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data_type_category.grouper }}</h2></td>
+          </tr>
+          {% for value in data_type_category.list %}
+            <td style="padding:0 15px 0 15px;"><b>{{ value.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{{ value.data_value }}</td>
+            {% if forloop..last %}
+              </tr>
+            {% else %}
+              {% if forloop.counter|divisibleby:"3" %}
+                </tr></tr>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+
 
 {% endblock %}
