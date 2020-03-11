@@ -2,16 +2,36 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from .models import Character, CharacterData
 
-class character_filter(ListView):
+# List of characters by filter
+class character_filter_view(ListView):
+    template_name = 'character_list.html'
+    model = Character
 
     def get_queryset(self, **kwargs):
         self.owner = self.request.GET.get('owner')
-        characters = Character.objects.filter(player=self.owner).order_by('slug')
-        return render(request, 'character/character_list.html', {'characters': characters})
+        return Character.objects.filter(characterOwner=self.owner)
 
-def character_list(request):
-    characters = Character.objects.all().order_by('slug')
-    return render(request, 'character/character_list.html', {'characters': characters})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        context['owner'] = self.request.GET.get('owner')
+        return context
+
+# List of all characters
+class character_list_view(ListView):
+    template_name = 'character_list.html'
+    model = Character
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        context['owner'] = self.request.GET.get('owner')
+        return context
+
+# def character_list(request):
+#     characters = Character.objects.all().order_by('slug')
+#     return render(request, 'character/character_list.html', {'characters': characters})
 
 def character_detail(request, pk):
     character = Character.objects.get(pk=pk)
