@@ -9,7 +9,7 @@ class character_filter_view(ListView):
 
     def get_queryset(self, **kwargs):
         self.owner = self.request.GET.get('owner')
-        return Character.objects.filter(characterOwner=self.owner)
+        return Character.objects.filter(player=self.owner)
 
 
     def get_context_data(self, **kwargs):
