@@ -1,7 +1,7 @@
 {% extends 'character/base.html' %}
 
 {% block content %}
-  {% for character in characters %}
+  {% for character in object_list %}
     <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug }}</a></p>
   {% endfor %}
 {% endblock %}
