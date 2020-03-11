@@ -2,9 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import Character, CharacterData
 
 def character_filter(request):
-    self.owner = self.request.GET.get('owner')
-    characters = Character.objects.filter(player=self.owner).order_by('slug')
-    return render(request, 'character/character_list.html', {'characters': characters})
+
+    def get_queryset(self, **kwargs):
+        self.owner = self.request.GET.get('owner')
+        characters = Character.objects.filter(player=self.owner).order_by('slug')
+        return render(request, 'character/character_list.html', {'characters': characters})
 
 def character_list(request):
     characters = Character.objects.all().order_by('slug')
