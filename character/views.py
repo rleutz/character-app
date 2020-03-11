@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Character, CharacterData
 
-def character_filter(request):
+class character_filter(request):
 
     def get_queryset(self, **kwargs):
         self.owner = self.request.GET.get('owner')
