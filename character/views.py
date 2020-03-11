@@ -14,7 +14,6 @@ class character_filter_view(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['now'] = timezone.now()
         context['owner'] = self.request.GET.get('owner')
         return context
 
@@ -25,7 +24,6 @@ class character_list_view(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['now'] = timezone.now()
         context['owner'] = self.request.GET.get('owner')
         return context
 
