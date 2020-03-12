@@ -3,7 +3,6 @@ from django.db import models
 from django.utils import timezone
 
 class Character(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True)
     slug = models.SlugField(unique=True, max_length=255)
     player = models.CharField(max_length=255, null=True, blank=True)
     mule_for = models.CharField(max_length=255, null=True, blank=True)
