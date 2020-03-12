@@ -1,10 +1,9 @@
 {% extends 'character/base.html' %}
 
 {% block content %}
-  {% for character in object_list %}
+{% regroup object_list by owner as char_list %}
+<p><h4>{{ data_type_category.grouper }}</h4></p>
+  {% for character in char_list %}
     <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug }}</a></p>
-    {% for obj in character.characterdata.all %}
-      <p> {{ obj }} </p>
-    {% endfor %}
   {% endfor %}
 {% endblock %}
