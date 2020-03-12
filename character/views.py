@@ -67,7 +67,7 @@ def character_detail(request, pk):
 
     list = CharacterData.objects.exclude(data_type_category = 'Character').filter(character_id=pk)
     for v in list:
-        if(v.value_is_number) {
+        if(v.value_is_number == True) {
             v.data_value=Cast('integer', v.data_value)
         }
     # name = CharacterData.objects.get(character_id=pk, data_type_name='Slug')
