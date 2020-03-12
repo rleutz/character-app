@@ -25,6 +25,7 @@ class CharacterData(models.Model):
     data_type_name = models.CharField(max_length=50)
     data_type_category = models.CharField(max_length=50)
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
+    value_is_number = models.BooleanField(default=False)
 
     def __str__(self):
         return self.data_value
