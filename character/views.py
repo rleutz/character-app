@@ -67,8 +67,7 @@ def character_detail(request, pk):
 
     list = CharacterData.objects.exclude(data_type_category = 'Character').filter(character_id=pk)
     for v in list:
-        if(v.value_is_number == True) {
+        if(v.value_is_number == True):
             v.data_value=Cast('integer', v.data_value)
-        }
     # name = CharacterData.objects.get(character_id=pk, data_type_name='Slug')
     return render(request, 'character/character_detail.html', {'calliance': calliance, 'calliancetag': calliancetag, 'cname': cname, 'cnametag': cnametag, 'cclass': cclass, 'cclasstag': cclasstag, 'cgender': cgender, 'cgendertag': cgendertag, 'chealth': chealth, 'chealthtag': chealthtag, 'clevel': clevel, 'cleveltag': cleveltag, 'cmagicka': cmagicka, 'cmagickatag': cmagickatag, 'crace': crace, 'cracetag': cracetag, 'cstamina': cstamina, 'cstaminatag': cstaminatag, 'character': character, 'cname': cname, 'list': list, 'charlist': charlist})
