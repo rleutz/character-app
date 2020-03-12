@@ -61,7 +61,7 @@
             <td colspan="2" style="padding:0 15px 0 15px;"><h2>{{ data_type_category.grouper }}</h2></td>
           </tr>
           {% for value in data_type_category.list %}
-            <td style="padding:0 15px 0 15px;"><b>{{ value.data_type_name }}</b></td><td style="padding:0 15px 0 15px;">{% if value.data_value < 50 %}{{ value.data_value }} LOW {% else %} {{ value.data_value }} {% endif %}</td>
+            <td style="padding:0 15px 0 15px;"><b>{{ value.data_type_name }}</b></td>{% if value.data_value < 50 %}<td style="padding:0 15px 0 15px; color: red;">{{ value.data_value }} {% else %} <td style="padding:0 15px 0 15px;">{{ value.data_value }} {% endif %}</td>
             {% if forloop..last %}
               </tr>
             {% else %}
