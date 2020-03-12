@@ -3,7 +3,7 @@
 {% block content %}
   {% for character in object_list %}
     <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug }}</a></p>
-    {% for obj in character.characterdata.all %}
+    {% for obj in character.characterdata_set.all %}
       <p> {{ obj }} </p>
     {% endfor %}
   {% endfor %}
