@@ -28,11 +28,11 @@
         </tr>
         <tr>
         {% if cmagicka > chealth and cmagicka > cstamina %}
-        <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Magicka+alcast+build" target="_blank">{{ cclass }}</a></td>
+          <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td><td><a href="https://www.google.com/search?q={{ cclass}}+Magicka+alcast+build" target="_blank">{{ cclass }}</a></td>
           {% elif cstamina > chealth and cstamina > cmagicka %}
-            <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Stamina+alcast+build" target="_blank">{{ cclass }}</a></td>
+            <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td><td><a href="https://www.google.com/search?q={{ cclass}}+Stamina+alcast+build" target="_blank">{{ cclass }}</a></td>
           {% else %}
-            <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Health+alcast+build" target="_blank">{{ cclass }}</a></td>
+            <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td><td><a href="https://www.google.com/search?q={{ cclass}}+Health+alcast+build" target="_blank">{{ cclass }}</a></td>
           {% endif %}
         </tr>
         <tr>
