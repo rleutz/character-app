@@ -47,19 +47,28 @@ def character_detail(request, pk):
             cgender = d.data_value
         if(d.data_type_name == 'Health'):
             chealthtag = d.data_type_name
-            chealth = d.data_value
+            if(d.data_value == "NA"):
+                chealth = "0"
+            else:
+                chealth = d.data_value
         if(d.data_type_name == 'Level'):
             cleveltag = d.data_type_name
             clevel = d.data_value
         if(d.data_type_name == 'Magicka'):
             cmagickatag = d.data_type_name
-            cmagicka = d.data_value
+            if(d.data_value == "NA"):
+                cmagicka = "0"
+            else:
+                cmagicka = int(d.data_value)
         if(d.data_type_name == 'Race'):
             cracetag = d.data_type_name
             crace = d.data_value
         if(d.data_type_name == 'Stamina'):
             cstaminatag = d.data_type_name
-            cstamina = d.data_value
+            if(d.data_value == "NA"):
+                cstamina = "0"
+            else:
+                cstamina = d.data_value
         if(d.data_type_name == 'Slug'):
             cnametag = d.data_type_name
             cname = d.data_value
