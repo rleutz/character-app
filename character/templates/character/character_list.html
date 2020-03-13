@@ -3,11 +3,13 @@
 
 {% block content %}
 
-{% for entry in feed.entries|slice:":5" %}
-  <li> <a href="{{entry.link}}">{{entry.title}}</a> </li>
-  <li>{{entry.published}}</li>
-  <li>- {{entry.description}}</li>
-{% endfor %}
+<table>
+  <th>Title</th> <th>Date</th>
+  {% for entry in feed.entries|slice:":5" %}
+    <td><a href="{{entry.link}}">{{entry.title}}</a></td> <td>{{entry.published}}</td>
+    <td colspan="2">{{entry.description}}</td>
+  {% endfor %}
+</table>
   {% for character in object_list %}
   <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
   {% endfor %}
