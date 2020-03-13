@@ -4,7 +4,7 @@
 
 {% for val in character.characterdata_set.all %}
   {% if val.data_type_name == "Class" %}
-    {$ setval val.data_value as charclass %}
+    {% setval val.data_value as charclass %}
   {% endif %}
 {% endfor %}
 
