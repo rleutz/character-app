@@ -5,7 +5,7 @@
   {% for character in object_list %}
     <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
     {% for val in character.characterdata_set.all %}
-      {% if val.data_type == "Class" %}
+      {% if val.data_type_name == "Class" %}
         <p>{{ val.data_value }}</p>
       {% endif %}
     {% endfor %}
