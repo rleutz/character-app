@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="bg">
+<div class="bg"><div class="bg"></div>
 <table>
   <th>Title</th> <th>Date</th>
   {% for entry in feed.entries|slice:":5" %}
@@ -21,5 +21,4 @@
   {% for character in object_list %}
   <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
   {% endfor %}
-</div>
 {% endblock %}
