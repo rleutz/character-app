@@ -5,7 +5,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <table>
-      <th colspan="2" align="center"><h1>NEWS</h1></th>
+      <th colspan="2"><h1>NEWS</h1></th>
       {% for entry in feed.entries|slice:":5" %}
         <tr>
           <td colspan="2"><hr></td>
@@ -21,8 +21,11 @@
   </div>
 </div>
 <div class="container">
-  {% for character in object_list %}
-  <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
-  {% endfor %}
+  <table>
+    <th> <h1>Characters</h1> </th>
+    {% for character in object_list %}
+    <tr><td> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td></tr>
+    {% endfor %}
+  </table>
 </div>
 {% endblock %}
