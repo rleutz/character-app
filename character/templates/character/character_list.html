@@ -5,7 +5,7 @@
 
 {% for entry in feed.entries|slice:":5" %}
   <li> <a href="{{entry.link}}">{{entry.title}}</a> </li>
-  <li>{{entry.feed.image}}</li>
+  <li>{{entry.feed.image.href}}</li>
   <li>{{entry.published}}</li>
   <li>- {{entry.description}}</li>
 {% endfor %}
