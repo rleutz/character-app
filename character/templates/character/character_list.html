@@ -7,9 +7,11 @@
   <th>Title</th> <th>Date</th>
   {% for entry in feed.entries|slice:":5" %}
     <tr>
+      <td colspan="2"><hr></td>
+    </tr>
+    <tr>
       <td><a href="{{entry.link}}">{{entry.title}}</a></td> <td>{{entry.published}}</td>
     </tr>
-    <td colspan="2"><hr></td>
     <tr>
       <td colspan="2">{{entry.description}}</td>
     </tr>
