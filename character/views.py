@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from .models import Character, CharacterData
+import feedparser
+
 
 # List of characters by filter
 class character_filter_view(ListView):
@@ -15,6 +17,7 @@ class character_filter_view(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.GET.get('owner')
+        context['feed'] = feedparser.parse("https://www.elderscrollsonline.com/en-us/rss/news/")
         return context
 
 # List of all characters
@@ -25,6 +28,7 @@ class character_list_view(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.GET.get('owner')
+        context['feed'] = feedparser.parse("https://www.elderscrollsonline.com/en-us/rss/news/")
         return context
 
 # def character_list(request):
