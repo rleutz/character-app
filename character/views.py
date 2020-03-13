@@ -27,7 +27,7 @@ class character_list_view(ListView):
             value = val.data_value
         if val.data_type_name == 'Magicka':
             magicka = int(val.data_value)
-        if val.data_type_name == 'Stamina'
+        if val.data_type_name == 'Stamina':
             if val.data_type_category = 'Character':
                 stamina = int(val.data_value):
         if val.data_type_name == "Health":
