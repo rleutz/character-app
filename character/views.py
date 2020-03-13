@@ -22,9 +22,28 @@ class character_list_view(ListView):
     template_name = 'character_list.html'
     model = Character
 
+    for val in character.characterdata_set.all():
+        if val.data_type_name == 'Class':
+            value = val.data_value
+        if val.data_type_name == 'Magicka':
+            magicka = int(val.data_value)
+        if val.data_type_name == 'Stamina' && val.data_type_category = 'Character':
+            stamina = int(val.data_value)
+        if val.data_type_name == "Health":
+            health = int(val.data_value)
+
+    if (magicka > stamina) and (magicka > health):
+        attribute = "Magicka"
+    elif (stamina > magicka) and (stamina > health):
+        attribute = "Stamina"
+    else:
+        attribute = "Health"
+
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.GET.get('owner')
+        context['attribute'] = attribute
         return context
 
 # def character_list(request):
