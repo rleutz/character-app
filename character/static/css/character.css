@@ -1,4 +1,19 @@
 body {
   padding-top: 60px;
-  background-image: linear-gradient(red, yellow);
+  height: 100%;
+}
+
+
+
+.bg {
+  /* The image used */
+  background-image: url("https://esossl-a.akamaihd.net/assets/img/cms/media/0e0ce0ab9dabb54cb9071b6073fb8721_unlikely-allies-face-elsweyrs-invaders_wallpaper-1920x1080.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
