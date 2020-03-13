@@ -8,8 +8,8 @@
     {% for val in character.characterdata_set.all %}
       {% if val.data_type_name == "Class" %}
         {% setvar val.data_value as charclass %}
+        <p>{{ charclass }}</p>
       {% endif %}
     {% endfor %}
-    <p>{{ charclass }}</p>
   {% endfor %}
 {% endblock %}
