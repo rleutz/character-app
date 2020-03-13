@@ -6,8 +6,12 @@
 <table>
   <th>Title</th> <th>Date</th>
   {% for entry in feed.entries|slice:":5" %}
-    <td><a href="{{entry.link}}">{{entry.title}}</a></td> <td>{{entry.published}}</td>
-    <td colspan="2">{{entry.description}}</td>
+    <tr>
+      <td><a href="{{entry.link}}">{{entry.title}}</a></td> <td>{{entry.published}}</td>
+    </tr>
+    <tr>
+      <td colspan="2">{{entry.description}}</td>      
+    </tr>
   {% endfor %}
 </table>
   {% for character in object_list %}
