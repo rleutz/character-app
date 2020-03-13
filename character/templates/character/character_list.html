@@ -5,7 +5,7 @@
 
 {% for entry in feed.entries|slice:":5" %}
   <li> <a href="{{entry.link}}">{{entry.title}}</a> </li>
-  <li>{{entry.published}}</li>
+  <li>{{entry.published|date:"SHORT_DATE_FORMAT"}}</li>
   <li>- {{entry.description}}</li>
 {% endfor %}
   {% for character in object_list %}
