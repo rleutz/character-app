@@ -21,12 +21,10 @@ class character_filter_view(ListView):
 class character_list_view(ListView):
     template_name = 'character_list.html'
     model = Character
-    data = character.characterdata_set
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.GET.get('owner')
-        context['attribute'] = attribute
         return context
 
 # def character_list(request):
