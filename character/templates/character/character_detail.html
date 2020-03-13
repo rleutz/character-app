@@ -27,12 +27,12 @@
           <td style="padding:0 15px 0 15px;"><b>{{ cracetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ crace }}</td>
         </tr>
         <tr>
-        {% if character.characterMagickaAttribute > chealth and cmagicka > cstamina %}
+        {% if cmagicka > chealth and cmagicka > cstamina %}
         <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Magicka+alcast+build" target="_blank">{{ cclass }}</a></td>
           {% elif cstamina > chealth and cstamina > cmagicka %}
-            <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Stamina+alcast+build" target="_blank">{{ character.characterClass }}</a></td>
+            <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Stamina+alcast+build" target="_blank">{{ cclass }}</a></td>
           {% else %}
-            <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Health+alcast+build" target="_blank">{{ character.characterClass }}</a></td>
+            <td><a href="https://www.google.com/search?q={{ character.characterClass}}+Health+alcast+build" target="_blank">{{ cclass }}</a></td>
           {% endif %}
         </tr>
         <tr>
