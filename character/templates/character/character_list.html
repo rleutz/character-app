@@ -5,22 +5,5 @@
 {% block content %}
   {% for character in object_list %}
   <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
-    {% for val in character.characterdata_set.all %}
-    {% if val.data_type_name == "Magicka" %}
-      {% setvar val.data_value as "Magicka"}
-    {% endif %}
-    {% if val.data_type_name == "Health" %}
-      {% setvar val.data_value as "Health"}
-    {% endif %}
-    {% if val.data_type_name == "Stamina" %}
-      {% if val.data_type_category == "Character"%}
-        {% setvar val.data_value as "Stamina"}
-      {% endif %}
-    {% endif %}
-      {% if val.data_type_name == "Class" %}
-        {% setvar val.data_value as charclass %}
-      {% endif %}
-        <p>{{ charclass }} {{ Magicka }} {{ Health }} {{ Stamina }}</p>
-    {% endfor %}
   {% endfor %}
 {% endblock %}
