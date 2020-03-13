@@ -8,8 +8,8 @@
       {% if val.data_type_name == "Class" %}
         {% setvar val.data_value as charclass %}
       {% endif %}
+      <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
+      <p>{{ charclass }}</p>
     {% endfor %}
-    <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
-    <p>{{ charclass }}</p>
   {% endfor %}
 {% endblock %}
