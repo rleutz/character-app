@@ -2,22 +2,27 @@
 {% load deslug %}
 
 {% block content %}
-
-<table>
-  <th>Title</th> <th>Date</th>
-  {% for entry in feed.entries|slice:":5" %}
-    <tr>
-      <td colspan="2"><hr></td>
-    </tr>
-    <tr>
-      <td><a href="{{entry.link}}">{{entry.title}}</a></td> <td>{{entry.published}}</td>
-    </tr>
-    <tr>
-      <td colspan="2"> <b>{{entry.description}}</b></td>
-    </tr>
-  {% endfor %}
-</table>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <table>
+      <th>Title</th> <th>Date</th>
+      {% for entry in feed.entries|slice:":5" %}
+        <tr>
+          <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+          <td><a href="{{entry.link}}">{{entry.title}}</a></td> <td>{{entry.published}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"> <b>{{entry.description}}</b></td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<div class="container">
   {% for character in object_list %}
   <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
   {% endfor %}
+</div>
 {% endblock %}
