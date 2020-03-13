@@ -1,4 +1,6 @@
 {% extends 'character/base.html' %}
+{% load deslug %}
+{% load setval %}
 
 {% block content %}
   {% for character in object_list %}
