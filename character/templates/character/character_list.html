@@ -10,8 +10,9 @@
       {% setvar val.data_value as "Magicka"}
     {% if val.data_type_name == "Health" %}
       {% setvar val.data_value as "Health"}
-    {% if val.data_type_name == "Stamina" && val.data_type_category == "Character"%}
-      {% setvar val.data_value as "Stamina"}
+    {% if val.data_type_name == "Stamina" %}
+      {% if val.data_type_category == "Character"%}
+        {% setvar val.data_value as "Stamina"}
       {% if val.data_type_name == "Class" %}
         {% setvar val.data_value as charclass %}
         <p>{{ charclass }} {{ Magicka }} {{ Health }} {{ Stamina }}</p>
