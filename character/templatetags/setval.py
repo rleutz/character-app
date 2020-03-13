@@ -3,5 +3,5 @@ from django import template
 register = template.Library()
 
 @register.simple_tag
-def setvar(val=None):
+def setval(val=None):
     return val
