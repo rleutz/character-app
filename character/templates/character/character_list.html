@@ -6,7 +6,7 @@
   {% for character in object_list %}
     {% for val in character.characterdata_set.all %}
       {% if val.data_type_name == "Class" %}
-        {% setval val.data_value as charclass %}
+        {% setvar val.data_value as charclass %}
       {% endif %}
     {% endfor %}
     <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
