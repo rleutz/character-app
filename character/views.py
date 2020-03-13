@@ -21,8 +21,9 @@ class character_filter_view(ListView):
 class character_list_view(ListView):
     template_name = 'character_list.html'
     model = Character
+    data = character.characterdata_set
 
-    for val in Character.CharacterData.all():
+    for val in data:
         if val.data_type_name == 'Class':
             value = val.data_value
         if val.data_type_name == 'Magicka':
