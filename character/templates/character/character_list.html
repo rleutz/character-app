@@ -3,6 +3,6 @@
 
 {% block content %}
   {% for character in object_list %}
-    <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug }}</a></p>
+    <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
   {% endfor %}
 {% endblock %}
