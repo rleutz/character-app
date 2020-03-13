@@ -5,6 +5,7 @@
 
 {% for entry in feed.entries|slice:":5" %}
   <li> <a href="{{entry.link}}">{{entry.title}}</a> </li>
+  <li>- {{entry.description}}</li>
 {% endfor %}
   {% for character in object_list %}
   <p> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></p>
