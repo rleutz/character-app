@@ -7,7 +7,6 @@
     {% for val in character.characterdata_set.all %}
       {% if val.data_type_name == "Class" %}
         <p>{{ val.data_value }}</p>
-        <p>{{ attribute }}</p>
       {% endif %}
     {% endfor %}
   {% endfor %}

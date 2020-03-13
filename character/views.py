@@ -23,25 +23,6 @@ class character_list_view(ListView):
     model = Character
     data = character.characterdata_set
 
-    for val in data:
-        if val.data_type_name == 'Class':
-            value = val.data_value
-        if val.data_type_name == 'Magicka':
-            magicka = int(val.data_value)
-        if val.data_type_name == 'Stamina':
-            if val.data_type_category == 'Character':
-                stamina = int(val.data_value)
-        if val.data_type_name == "Health":
-            health = int(val.data_value)
-
-    if (magicka > stamina) and (magicka > health):
-        attribute = "Magicka"
-    elif (stamina > magicka) and (stamina > health):
-        attribute = "Stamina"
-    else:
-        attribute = "Health"
-
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.GET.get('owner')
