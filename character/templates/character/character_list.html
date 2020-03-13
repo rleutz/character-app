@@ -3,7 +3,7 @@
 
 {% block content %}
 
-{% for entry in feed.entries %}
+{% for entry in feed.entries|slice:":5" %}
   <li> <a href="{{entry.link}}">{{entry.title}}</a> </li>
 {% endfor %}
   {% for character in object_list %}
