@@ -25,19 +25,19 @@
     <th colspan="7"> <h1>{% if owner %}{{ owner }}'s Characters {% else %}All Characters {% endif %}</h1> </th>
     {% for character in object_list %}
     <tr>
-      <td style="width:175px"> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td>
-      <td>{{ character.gender }}</td>
-      <td>{{ character.level }}</td>
-      <td>{{ character.character_class }}</td>
-      <td>{{ character.race }}</td>
-      <td>{{ character.alliance }}</td>
+      <td style="width:175px padding:0 15px"> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td>
+      <td padding:0 15px>{{ character.gender }}</td>
+      <td padding:0 15px>{{ character.level }}</td>
+      <td padding:0 15px>{{ character.character_class }}</td>
+      <td padding:0 15px>{{ character.race }}</td>
+      <td padding:0 15px>{{ character.alliance }}</td>
 
       {% if character.magicka > character.health and character.magicka > character.stamina %}
-        <td>Magicka</td>
+        <td padding:0 15px>Magicka</td>
       {% elif character.stamina > character.health and character.stamina > character.magicka %}
-          <td>Stamina</td>
+          <td padding:0 15px>Stamina</td>
       {% else %}
-          <td>Health</td>
+          <td padding:0 15px>Health</td>
       {% endif %}
 
     </tr>
