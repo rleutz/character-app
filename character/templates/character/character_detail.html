@@ -23,7 +23,7 @@
           </td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>Edit</b></td> <td style="padding:0 15px 0 15px;"><a class="btn btn-sm" href="{% url 'character_edit' pk=character.pk %}">{% octicon "pencil" %}</a></td>
+          <td style="padding:0 15px 0 15px;" colspan="2"><a class="btn btn-dark" href="{% url 'character_edit' pk=character.pk %}">Edit</a></td>
         </tr>
         <tr>
           <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ character.slug|deslug|title }}</td>
