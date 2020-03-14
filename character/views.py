@@ -49,9 +49,9 @@ def character_detail(request, pk):
     return render(request, 'character/character_detail.html', {'character': character, 'list': list})
 
 def character_edit(request, pk):
-    character = Character.objects.get(pk=pk)
+    character = get_object_or_404(Character, pk=pk)
     if request.method == "POST":
-        form = CharacterForm(request.POST, request.FILES, character)
+        form = CharacterForm(request.POST, request.FILES, instance=character)
         if form.is_valid():
             character = form.save(commit=False)
             character.save()
