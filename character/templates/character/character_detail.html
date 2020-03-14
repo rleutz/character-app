@@ -23,37 +23,37 @@
           </td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px" "height: 20px"><b>Name</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.slug|deslug|title }} <a class="btn btn-sm" href="{% url 'character_edit' pk=character.pk %}">{% octicon "pencil" %}</a></td>
+          <td style="padding:0 15px 0 15px;height:100px" "height: 20px"><b>Name</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.slug|deslug|title }} <a class="btn btn-sm" href="{% url 'character_edit' pk=character.pk %}">{% octicon "pencil" %}</a></td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Race</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.race }}</td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Race</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.race }}</td>
         </tr>
         <tr>
         {% if character.magicka > character.health and character.magicka > character.stamina %}
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Class</b></td><td style="padding:0 15px 0 15px;" "height: 100px"><a href="https://www.google.com/search?q={{ character.character_class }}+Magicka+alcast+build" target="_blank">{{ character.character_class }}</a></td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Class</b></td><td style="padding:0 15px 0 15px;height:100px"><a href="https://www.google.com/search?q={{ character.character_class }}+Magicka+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% elif character.stamina > character.health and character.stamina > character.magicka %}
-            <td style="padding:0 15px 0 15px;" "height: 100px"><b>Class</b></td><td style="padding:0 15px 0 15px;" "height: 100px"><a href="https://www.google.com/search?q={{ character.character_class }}+Stamina+alcast+build" target="_blank">{{ character.character_class }}</a></td>
+            <td style="padding:0 15px 0 15px;height:100px"><b>Class</b></td><td style="padding:0 15px 0 15px;height:100px"><a href="https://www.google.com/search?q={{ character.character_class }}+Stamina+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% else %}
-            <td style="padding:0 15px 0 15px;" "height: 100px"><b>Class</b></td><td style="padding:0 15px 0 15px;" "height: 100px"><a href="https://www.google.com/search?q={{ character.character_class }}+Health+alcast+build" target="_blank">{{ character.character_class }}</a></td>
+            <td style="padding:0 15px 0 15px;height:100px"><b>Class</b></td><td style="padding:0 15px 0 15px;height:100px"><a href="https://www.google.com/search?q={{ character.character_class }}+Health+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% endif %}
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Level</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.level }}</td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Level</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.level }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Alliance</b></td> <td style="padding:0 15px 0 15px;" "height: 100px"><a href="https://www.google.com/search?q={{ character.alliance }}+capital+city+eso" target="_blank">{{ character.alliance }}</a></td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Alliance</b></td> <td style="padding:0 15px 0 15px;height:100px"><a href="https://www.google.com/search?q={{ character.alliance }}+capital+city+eso" target="_blank">{{ character.alliance }}</a></td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Gender</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.gender }}</td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Gender</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.gender }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Magicka</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.magicka }}</td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Magicka</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.magicka }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Stamina</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.stamina }}</td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Stamina</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.stamina }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;" "height: 100px"><b>Health</b></td> <td style="padding:0 15px 0 15px;" "height: 100px">{{ character.health }}</td>
+          <td style="padding:0 15px 0 15px;height:100px"><b>Health</b></td> <td style="padding:0 15px 0 15px;height:100px">{{ character.health }}</td>
         </tr>
       </table>
     </div>
@@ -63,13 +63,13 @@
       <table>
         {% for data_type_category in chardata_list %}
           <tr>
-            <td colspan="8" style="padding:0 15px 0 15px;" "height: 100px"><hr><hr></td>
+            <td colspan="8" style="padding:0 15px 0 15px;height:100px"><hr><hr></td>
           </tr>
           <tr>
-            <td colspan="2" style="padding:0 15px 0 15px;" "height: 100px"><h4>{{ data_type_category.grouper }}</h4></td>
+            <td colspan="2" style="padding:0 15px 0 15px;height:100px"><h4>{{ data_type_category.grouper }}</h4></td>
           </tr>
           {% for value in data_type_category.list %}
-            <td style="padding:0 15px 0 15px;" "height: 100px"><b>{{ value.data_type_name }}</b></td>{% if value.data_value < 50 %}<td style="padding:0 15px 0 15px; color: red;">{{ value.data_value }} {% else %} <td style="padding:0 15px 0 15px;" "height: 100px">{{ value.data_value }} {% endif %}</td>
+            <td style="padding:0 15px 0 15px;height:100px"><b>{{ value.data_type_name }}</b></td>{% if value.data_value < 50 %}<td style="padding:0 15px 0 15px; color: red;">{{ value.data_value }} {% else %} <td style="padding:0 15px 0 15px;height:100px">{{ value.data_value }} {% endif %}</td>
             {% if forloop..last %}
               </tr>
             {% else %}
