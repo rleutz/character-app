@@ -22,7 +22,7 @@
 </div>
 <div class="container">
   <table>
-    <th> <h1>Characters{% if owner %} - {{ owner }} {% endif %}</h1> </th>
+    <th> <h1>{% if owner %}{{ owner }}'s Characters {% else %}All Characters {% endif %}</h1> </th>
     {% for character in object_list %}
     <tr><td> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td></tr>
     {% endfor %}
