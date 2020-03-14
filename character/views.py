@@ -44,3 +44,15 @@ def character_detail(request, pk):
             v.data_value=int(v.data_value)
     # name = CharacterData.objects.get(character_id=pk, data_type_name='Slug')
     return render(request, 'character/character_detail.html', {'character': character, 'list': list})
+
+def character_edit(request, pk):
+    post = get_object_or_404(Character, pk=pk)
+    if request.method == "POST":
+        form = CharacterForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('character_detail', pk=character.pk)
+    else:
+        form = CharacterForm(instance=post)
+    return render(request, 'character/character_edit.html', {'form': form})
