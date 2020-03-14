@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from .models import Character, CharacterData
 import feedparser
+from .forms import CharacterForm
 
 
 # List of characters by filter
