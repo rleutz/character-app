@@ -52,7 +52,7 @@ def character_edit(request, pk):
         form = CharacterForm(request.POST, request.FILES, instance=character)
         if form.is_valid():
             character = form.save(commit=False)
-            character.image = form.cleaned_data['image']
+            character.image = form.cleaned_data['id_image']
             character.save()
             return redirect('character_detail', pk=character.pk)
     else:
