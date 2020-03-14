@@ -29,7 +29,7 @@
           <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ character.slug|deslug|title }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>Main</b></td> <td style="padding:0 15px 0 15px;">{% if character_main == 1 %}Yes{% else %}No{% endif %}</td>
+          <td style="padding:0 15px 0 15px;"><b>Main</b></td> <td style="padding:0 15px 0 15px;">{% if character_main == True %}Yes{% else %}No{% endif %}</td>
         </tr>
         <tr>
           <td style="padding:0 15px 0 15px;"><b>Race</b></td> <td style="padding:0 15px 0 15px;">{{ character.race }}</td>
