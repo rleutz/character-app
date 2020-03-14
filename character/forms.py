@@ -4,6 +4,10 @@ from .models import Character
 
 class CharacterForm(forms.ModelForm):
 
+    def __init__(self, *args, **kwargs):
+        super(CharacterForm, self).__init__(*args, **kwargs)
+        self.fields['slug'].widget.attrs['readonly'] = True
+
     class Meta:
         model = Character
         fields = ('slug', 'character_main', 'mule_for', 'notes', 'image')
