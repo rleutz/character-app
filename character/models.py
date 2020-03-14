@@ -7,6 +7,17 @@ class Character(models.Model):
     player = models.CharField(max_length=255, null=True, blank=True)
     mule_for = models.CharField(max_length=255, null=True, blank=True)
     character_main = models.BooleanField(default=False)
+    notes = models.TextField()
+    value_is_number = models.BooleanField(default=False)
+    gender = models.CharField(max_length=255, null=True, blank=True)
+    level = models.PositiveIntegerField()
+    character_class = models.CharField(max_length=255, null=True, blank=True)
+    race = models.CharField(max_length=255, null=True, blank=True)
+    alliance = models.CharField(max_length=255, null=True, blank=True)
+    health = models.PositiveIntegerField()
+    magicka = models.PositiveIntegerField()
+    stamina = models.PositiveIntegerField()
+
     image = models.ImageField(upload_to='profile_image', blank=True)
 
     def get_absolute_url(self):
