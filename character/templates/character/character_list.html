@@ -37,7 +37,7 @@
     {% for character in object_list %}
     <tbody>
       <tr>
-        <td style="height:20px padding:0 15px 0 15px"> {% if character.character_main == 1}<a href="{% url 'character_detail' pk=character.pk %}" class="text-success">{{ character.slug|deslug|title }}</a>{% else %}<a href="{% url 'character_detail' pk=character.pk %}" class="text-info">{{ character.slug|deslug|title }}</a>{% endif %}</td>
+        <td style="height:20px padding:0 15px 0 15px"> {% if character.character_main == 1 %}<a href="{% url 'character_detail' pk=character.pk %}" class="text-success">{{ character.slug|deslug|title }}</a>{% else %}<a href="{% url 'character_detail' pk=character.pk %}" class="text-info">{{ character.slug|deslug|title }}</a>{% endif %}</td>
         <td style="height:20px padding:0 15px 0 15px">{{ character.race }}</td>
         <td style="height:20px padding:0 15px 0 15px">{{ character.character_class }}</td>
         <td style="height:20px padding:0 15px 0 15px">{{ character.level }}</td>
