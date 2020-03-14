@@ -28,11 +28,11 @@
         </tr>
         <tr>
         {% if chracter.magicka > character.health and character.magicka > character.stamina %}
-          <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.class }}+Magicka+alcast+build" target="_blank">{{ character.class }}</a></td>
+          <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.character_class }}+Magicka+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% elif character.stamina > character.health and character.stamina > character.magicka %}
-            <td style="padding:0 15px 0 15px;"><b>Stamina</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.class }}+Stamina+alcast+build" target="_blank">{{ character.class }}</a></td>
+            <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.character_class }}+Stamina+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% else %}
-            <td style="padding:0 15px 0 15px;"><b>Health</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.class }}+Health+alcast+build" target="_blank">{{ character.class }}</a></td>
+            <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.character_class }}+Health+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% endif %}
         </tr>
         <tr>
