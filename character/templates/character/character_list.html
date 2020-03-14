@@ -28,19 +28,19 @@
     {% for character in object_list %}
     <tbody>
       <tr>
-        <td style="padding:0 15px 0 15px"> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td>
-        <td style="padding:0 15px 0 15px">{{ character.gender }}</td>
-        <td style="padding:0 15px 0 15px">{{ character.level }}</td>
-        <td style="padding:0 15px 0 15px">{{ character.character_class }}</td>
-        <td style="padding:0 15px 0 15px">{{ character.race }}</td>
-        <td style="padding:0 15px 0 15px">{{ character.alliance }}</td>
+        <td style="height:20px padding:0 15px 0 15px"> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td>
+        <td style="height:20px padding:0 15px 0 15px">{{ character.gender }}</td>
+        <td style="height:20px padding:0 15px 0 15px">{{ character.level }}</td>
+        <td style="height:20px padding:0 15px 0 15px">{{ character.character_class }}</td>
+        <td style="height:20px padding:0 15px 0 15px">{{ character.race }}</td>
+        <td style="height:20px padding:0 15px 0 15px">{{ character.alliance }}</td>
 
         {% if character.magicka > character.health and character.magicka > character.stamina %}
-          <td style="padding:0 15px 0 15px">Magicka</td>
+          <td style="height:20px padding:0 15px 0 15px">Magicka</td>
         {% elif character.stamina > character.health and character.stamina > character.magicka %}
-            <td style="padding:0 15px 0 15px">Stamina</td>
+            <td style="height:20px padding:0 15px 0 15px">Stamina</td>
         {% else %}
-            <td style="padding:0 15px 0 15px">Health</td>
+            <td style="height:20px padding:0 15px 0 15px">Health</td>
         {% endif %}
 
       </tr>
