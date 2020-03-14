@@ -22,9 +22,9 @@
 </div>
 <div class="container">
   <table class="table table-hover">
-    <thread>
+    <thead>
       <th colspan="7"> <h1>{% if owner %}{{ owner }}'s Characters {% else %}All Characters {% endif %}</h1> </th>
-    </thread>
+    </thead>
     {% for character in object_list %}
     <tbody>
       <tr>
