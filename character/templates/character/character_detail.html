@@ -23,7 +23,8 @@
           </td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;height:30px" "height: 20px"><b>Name</b></td> <td style="padding:0 15px 0 15px;height:30px">{{ character.slug|deslug|title }}<a class="btn btn-sm" href="{% url 'character_edit' pk=character.pk %}">{% octicon "pencil" height="15" width="15" %}</a></td>
+          <td style="padding:0 15px 0 15px;height:30px" "height: 20px"><b>Edit</b></td> <td style="padding:0 15px 0 15px;height:30px"><a class="btn btn-sm" href="{% url 'character_edit' pk=character.pk %}">{% octicon "pencil" %}</a></td>
+          <td style="padding:0 15px 0 15px;height:30px" "height: 20px"><b>Name</b></td> <td style="padding:0 15px 0 15px;height:30px">{{ character.slug|deslug|title }}</td>
         </tr>
         <tr>
           <td style="padding:0 15px 0 15px;height:30px"><b>Race</b></td> <td style="padding:0 15px 0 15px;height:30px">{{ character.race }}</td>
