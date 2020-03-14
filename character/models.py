@@ -27,7 +27,7 @@ class Character(models.Model):
         return self.slug
 
     class Meta:
-        ordering = ['character_main', 'slug']
+        ordering = ['-character_main', 'slug']
 
 class CharacterData(models.Model):
     data_value = models.CharField(max_length=255)
