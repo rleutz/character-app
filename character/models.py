@@ -10,13 +10,13 @@ class Character(models.Model):
     notes = models.TextField()
     value_is_number = models.BooleanField(default=False)
     gender = models.CharField(max_length=255, null=True, blank=True)
-    level = models.PositiveIntegerField()
+    level = models.PositiveIntegerField(null=True, blank=True)
     character_class = models.CharField(max_length=255, null=True, blank=True)
     race = models.CharField(max_length=255, null=True, blank=True)
     alliance = models.CharField(max_length=255, null=True, blank=True)
-    health = models.PositiveIntegerField()
-    magicka = models.PositiveIntegerField()
-    stamina = models.PositiveIntegerField()
+    health = models.PositiveIntegerField(null=True, blank=True)
+    magicka = models.PositiveIntegerField(null=True, blank=True)
+    stamina = models.PositiveIntegerField(null=True, blank=True)
 
     image = models.ImageField(upload_to='profile_image', blank=True)
 
