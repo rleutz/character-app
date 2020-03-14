@@ -24,13 +24,15 @@
   <table class="table table-hover">
     <thead>
       <th colspan="7"> <h1>{% if owner %}{{ owner }}'s Characters {% else %}All Characters {% endif %}</h1> </th>
-      <th>Name</th>
-      <th>Race</th>
-      <th>Class</th>
-      <th>Level</th>
-      <th>Attribute</th>
-      <th>Alliance</th>
-      <th>Gender</th>
+      <tr>
+        <th>Name</th>
+        <th>Race</th>
+        <th>Class</th>
+        <th>Level</th>
+        <th>Attribute</th>
+        <th>Alliance</th>
+        <th>Gender</th>
+      </tr>
     </thead>
     {% for character in object_list %}
     <tbody>
