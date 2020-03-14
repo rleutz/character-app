@@ -21,37 +21,37 @@
           </td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ cname }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ character.slug }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ cracetag }}</b></td> <td style="padding:0 15px 0 15px;">{{ crace }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Race</b></td> <td style="padding:0 15px 0 15px;">{{ character.race }}</td>
         </tr>
         <tr>
-        {% if cmagicka > chealth and cmagicka > cstamina %}
-          <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ cclass }}+Magicka+alcast+build" target="_blank">{{ cclass }}</a></td>
-          {% elif cstamina > chealth and cstamina > cmagicka %}
-            <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ cclass }}+Stamina+alcast+build" target="_blank">{{ cclass }}</a></td>
+        {% if chracter.magicka > character.health and character.magicka > character.stamina %}
+          <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.class }}+Magicka+alcast+build" target="_blank">{{ character.class }}</a></td>
+          {% elif character.stamina > character.health and character.stamina > character.magicka %}
+            <td style="padding:0 15px 0 15px;"><b>Stamina</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.class }}+Stamina+alcast+build" target="_blank">{{ character.class }}</a></td>
           {% else %}
-            <td style="padding:0 15px 0 15px;"><b>{{ cclasstag }}</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ cclass }}+Health+alcast+build" target="_blank">{{ cclass }}</a></td>
+            <td style="padding:0 15px 0 15px;"><b>Health</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.class }}+Health+alcast+build" target="_blank">{{ character.class }}</a></td>
           {% endif %}
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ cleveltag }}</b></td> <td style="padding:0 15px 0 15px;">{{ clevel }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Level</b></td> <td style="padding:0 15px 0 15px;">{{ character.level }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ calliancetag }}</b></td> <td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ calliance }}+capital+city+eso" target="_blank">{{ calliance }}</a></td>
+          <td style="padding:0 15px 0 15px;"><b>Alliance</b></td> <td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.alliance }}+capital+city+eso" target="_blank">{{ character.alliance }}</a></td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ cgendertag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cgender }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Gender</b></td> <td style="padding:0 15px 0 15px;">{{ character.gender }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ cmagickatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cmagicka }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Magicka</b></td> <td style="padding:0 15px 0 15px;">{{ character.magicka }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ cstaminatag }}</b></td> <td style="padding:0 15px 0 15px;">{{ cstamina }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Stamina</b></td> <td style="padding:0 15px 0 15px;">{{ character.stamina }}</td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>{{ chealthtag }}</b></td> <td style="padding:0 15px 0 15px;">{{ chealth }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Health</b></td> <td style="padding:0 15px 0 15px;">{{ character.health }}</td>
         </tr>
       </table>
     </div>
