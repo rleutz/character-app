@@ -27,7 +27,7 @@
           <td style="padding:0 15px 0 15px;"><b>Race</b></td> <td style="padding:0 15px 0 15px;">{{ character.race }}</td>
         </tr>
         <tr>
-        {% if chracter.magicka > character.health and character.magicka > character.stamina %}
+        {% if character.magicka > character.health and character.magicka > character.stamina %}
           <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.character_class }}+Magicka+alcast+build" target="_blank">{{ character.character_class }}</a></td>
           {% elif character.stamina > character.health and character.stamina > character.magicka %}
             <td style="padding:0 15px 0 15px;"><b>Class</b></td><td style="padding:0 15px 0 15px;"><a href="https://www.google.com/search?q={{ character.character_class }}+Stamina+alcast+build" target="_blank">{{ character.character_class }}</a></td>
