@@ -4,6 +4,6 @@
     <h2>Edit Character</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="button" class="save btn btn-info">Save</button>
+        <button type="submit" class="save btn btn-info">Save</button>
     </form>
 {% endblock %}
