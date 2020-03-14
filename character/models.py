@@ -7,7 +7,7 @@ class Character(models.Model):
     player = models.CharField(max_length=255, null=True, blank=True)
     mule_for = models.CharField(max_length=255, null=True, blank=True)
     character_main = models.BooleanField(default=False)
-    notes = models.TextField()
+    notes = models.TextField(null=True, blank=True)
     value_is_number = models.BooleanField(default=False)
     gender = models.CharField(max_length=255, null=True, blank=True)
     level = models.PositiveIntegerField(null=True, blank=True)
@@ -17,7 +17,6 @@ class Character(models.Model):
     health = models.PositiveIntegerField(null=True, blank=True)
     magicka = models.PositiveIntegerField(null=True, blank=True)
     stamina = models.PositiveIntegerField(null=True, blank=True)
-
     image = models.ImageField(upload_to='profile_image', blank=True)
 
     def get_absolute_url(self):
