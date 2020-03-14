@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
 from django.views.generic.list import ListView
 from .models import Character, CharacterData
 import feedparser
