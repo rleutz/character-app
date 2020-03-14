@@ -49,9 +49,9 @@ def character_detail(request, pk):
 def character_edit(request, pk):
     character = get_object_or_404(Character, pk=pk)
     if request.method == "POST":
-        form = CharacterForm(request.POST, instance=post)
+        form = CharacterForm(request.POST, instance=character)
         if form.is_valid():
-            post = form.save(commit=False)
+            character = form.save(commit=False)
             post.save()
             return redirect('character_detail', pk=character.pk)
     else:
