@@ -52,8 +52,8 @@ def character_edit(request, pk):
         form = CharacterForm(request.POST, instance=character)
         if form.is_valid():
             character = form.save(commit=False)
-            post.save()
+            character.save()
             return redirect('character_detail', pk=character.pk)
     else:
-        form = CharacterForm(instance=post)
+        form = CharacterForm(instance=character)
     return render(request, 'character/character_edit.html', {'form': form})
