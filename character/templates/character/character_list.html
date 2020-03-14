@@ -28,7 +28,7 @@
     {% for character in object_list %}
     <tbody>
       <tr>
-        <td style="width:175px padding:0 15px 0 15px"> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td>
+        <td style="padding:0 15px 0 15px"> <a href="{% url 'character_detail' pk=character.pk %}">{{ character.slug|deslug|title }}</a></td>
         <td style="padding:0 15px 0 15px">{{ character.gender }}</td>
         <td style="padding:0 15px 0 15px">{{ character.level }}</td>
         <td style="padding:0 15px 0 15px">{{ character.character_class }}</td>
