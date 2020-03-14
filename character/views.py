@@ -43,4 +43,4 @@ def character_detail(request, pk):
         if(v.value_is_number == True):
             v.data_value=int(v.data_value)
     # name = CharacterData.objects.get(character_id=pk, data_type_name='Slug')
-    return render(request, 'character/character_detail.html', {'character': character, list': list})
+    return render(request, 'character/character_detail.html', {'character': character, 'list': list})
