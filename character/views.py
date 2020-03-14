@@ -50,9 +50,8 @@ def character_detail(request, pk):
 
 def character_edit(request, pk):
     character = get_object_or_404(Character, pk=pk)
-    char_name = character.Slug
     if request.method == "POST":
-        form = CharacterForm(request.POST, request.FILES, instance=character, char_name)
+        form = CharacterForm(request.POST, request.FILES, instance=character)
         if form.is_valid():
             character = form.save(commit=False)
             character.save()
