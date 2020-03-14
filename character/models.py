@@ -8,7 +8,6 @@ class Character(models.Model):
     mule_for = models.CharField(max_length=255, null=True, blank=True)
     character_main = models.BooleanField(default=False)
     notes = models.TextField(null=True, blank=True)
-    value_is_number = models.BooleanField(default=False)
     gender = models.CharField(max_length=255, null=True, blank=True)
     level = models.PositiveIntegerField(null=True, blank=True)
     character_class = models.CharField(max_length=255, null=True, blank=True)
