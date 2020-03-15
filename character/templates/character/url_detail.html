@@ -1,0 +1,14 @@
+{% extends 'character/base.html' %}
+
+{% block content %}
+
+  <div class="url">
+    {% if url.published_date %}
+      <div class="date">
+        {{ url.published_date }}
+      </div>
+    {% endif %}
+    <h2>{{ url.title }}</h2>
+    <p>{{ url.description }}</p>
+  </div>
+{% endblock %}

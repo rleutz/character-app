@@ -2,18 +2,19 @@
 
 {% block content %}
 
-<table>
-  <th colspan="4"><h4>GOOD BOOKMARKS</h4></th>
+<table class="table table-hover">
+  <th colspan="2"><h4>GOOD BOOKMARKS</h4></th>
+  <th>
+    <button onclick="window.location.href = '/url_new';">Add Location</button>
+  </th>
   <tr>
     <th>Title</th>
-    <th>URL</th>
     <th>Description</th>
     <th>Published Date</th>
   </tr>
   {% for url in object_list %}
     <tr>
-      <td colspan="2"> <b>{{url.title}}</b> </td>
-      <td colspan="2"> <b>{{url.url}}</b> </td>
+      <td colspan="2"> <b> <a href="{% url 'url_detail', pk=url.pk %}"></a>{{url.title}}</b> </td>
       <td colspan="2"> <b>{{url.description}}</b> </td>
       <td colspan="2"> <b>{{url.published_date}}</b> </td>
     </tr>

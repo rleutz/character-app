@@ -42,6 +42,24 @@ class url_list_view(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
+def url_new(request):
+    if request.method == "POST":
+        form = UrlForm(request.POST)
+        if form.is_valid():
+            url = form.save(commit=False)
+            url.published_date = timezone.now()
+            url.save()
+            return redirect('url_detail', pk=url.pk)
+
+    form = UrlForm()
+    return render(request, 'character/url_edit.html', {'form': form})
+
+def url_detail(request, pk):
+    url = get_object_or_404(UrlTable, pk=pk)
+    return render(request, 'character/url_detail.html', {'url': url})
+
+
+
 def character_detail(request, pk):
     character = Character.objects.get(pk=pk)
 
