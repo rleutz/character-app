@@ -25,7 +25,7 @@ class Character(models.Model):
     magicka = models.PositiveIntegerField(null=True, blank=True)
     stamina = models.PositiveIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to='profile_image', blank=True)
-    group_role = models.CharField(max_length=1, choices=GROUP_ROLE)
+    group_role = models.CharField(max_length=1, null=True, blank=True, choices=GROUP_ROLE)
 
     def get_absolute_url(self):
         return reverse(
