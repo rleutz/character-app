@@ -12,7 +12,7 @@ class CharacterForm(forms.ModelForm):
         model = Character
         fields = ('name', 'character_main', 'mule_for', 'notes', 'image', 'group_role')
 
-class UrlForm(forms.ModelForm)
+class UrlForm(forms.ModelForm):
 
     class Meta:
         model = UrlTable
