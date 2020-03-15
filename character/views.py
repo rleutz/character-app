@@ -50,7 +50,7 @@ def url_new(request):
             url = form.save(commit=False)
             url.published_date = timezone.now()
             url.save()
-            return redirect('url_detail', pk=url.pk)
+            return redirect('url_list', pk=url.pk)
 
     form = UrlForm()
     return render(request, 'character/url_edit.html', {'form': form})
