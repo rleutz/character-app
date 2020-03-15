@@ -17,7 +17,7 @@
   {% for url in object_list %}
     <tr>
       <td><a class="btn btn-sm" href="{% url 'url_edit' pk=url.pk %}" role="button">{% octicon "pencil" %}</a> / <a class="btn btn-sm" href="{% url 'url_remove' pk=url.pk %}" role="button">{% octicon "trashcan" %}</a><span class="glyphicon glyphicon-remove"></span></a></td>
-      <td class="text-info"><a href="{{url.url}}" target="_blank">{{url.title}}</a></td>
+      <td><a href="{{url.url}}" target="_blank" class="text-info">{{url.title}}</a></td>
       <td>{{url.description}}</td>
       <td>{{url.published_date}}</td>
     </tr>
