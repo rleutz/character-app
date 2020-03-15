@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="container position-fixed">
-  <div class="row justify-content-start">
+  <div class="row justify-content-start bg-primary">
     <div class="col-4">
       <table>
         <tr>
@@ -71,7 +71,7 @@
         </tr>
       </table>
     </div>
-    <div class="col-6">
+    <div class="col-6 bg-secondary">
       {% regroup list by data_type_category as chardata_list %}
 
       <table class="table table-hover">
