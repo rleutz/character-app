@@ -2,16 +2,19 @@
 
 {% block content %}
 
-<p> <h2>Good Gameing Bookmarks</h2> </p>
+<p> <h2>Bookmark Details</h2> </p>
 
-  <div class="url">
-    {% if url.published_date %}
-      <div class="date">
-        {{ url.published_date }}
-      </div>
-    {% endif %}
-    <h4> <a href="{{ url.url }}" target="_blank">{{ url.title }}</a></h4>
-    <p>{{ url.description }}</p>
-  </div>
+<table class="table table-hover">
+  <tr>
+    <th>Publish Date</th>
+    <th>Bookmark</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>{% if url.published_date %}{{ url.published_date }}{% endif %}</td>
+    <td><a href="{{ url.url }}" target="_blank">{{ url.title }}</a></td>
+    <td>{{ url.description }}</td>
+  </tr>
+</table>
 
 {% endblock %}
