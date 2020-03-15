@@ -9,14 +9,14 @@
     <a href="{% url 'url_new' %}" class="btn btn-info" role="button">Add Location</a>
   </th>
   <tr>
-    <th>Edit</th>
+    <th>Edit / Delete</th>
     <th>Title</th>
     <th>Description</th>
     <th>Published Date</th>
   </tr>
   {% for url in object_list %}
     <tr>
-      <td><a class="btn btn-sm" href="{% url 'url_edit' pk=url.pk %}" role="button">{% octicon "pencil" %}</a></td>
+      <td><a class="btn btn-sm" href="{% url 'url_edit' pk=url.pk %}" role="button">{% octicon "pencil" %}</a> / <a class="btn btn-sm" href="{% url 'url_remove' pk=url.pk %}" role="button">{% octicon "trashcan" %}</a><span class="glyphicon glyphicon-remove"></span></a></td>
       <td><a href="{{url.url}}" target="_blank">{{url.title}}</a></td>
       <td> <b>{{url.description}}</b> </td>
       <td> <b>{{url.published_date}}</b> </td>

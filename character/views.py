@@ -71,6 +71,11 @@ def url_edit(request, pk):
         form = UrlForm(instance=url)
     return render(request, 'character/url_edit.html', {'form': form})
 
+def url_remove(request, pk):
+    url = get_object_or_404(UrlTable, pk=pk)
+    url.delete()
+    return redirect('url_list')
+
 
 
 def character_detail(request, pk):
