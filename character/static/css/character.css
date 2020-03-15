@@ -3,5 +3,6 @@ body {
 }
 
 div.ex1 {
-  overflow-y: auto;
+  position:fixed;
+  overflow-y:auto;
 }
