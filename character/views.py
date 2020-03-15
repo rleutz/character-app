@@ -4,7 +4,7 @@ from django.conf import settings
 from django.views.generic.list import ListView
 from .models import Character, CharacterData, UrlTable
 import feedparser
-from .forms import CharacterForm
+from .forms import CharacterForm, UrlForm
 
 
 # List of characters by filter
