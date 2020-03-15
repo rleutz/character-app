@@ -78,7 +78,8 @@
         {% for data_type_category in chardata_list %}
           <tr class="table-active">
             <td colspan="8" style="padding:0 15px 0 15px;"><strong>{{ data_type_category.grouper }}</strong></td>
-          </tr><tr>
+          </tr>
+          <tr>
           {% for value in data_type_category.list %}
             <td style="padding:0 15px 0 15px;"><em>{{ value.data_type_name }}</em></td>{% if value.data_value < 50 %}<td style="padding:0 15px 0 15px; color: red;">{{ value.data_value }} {% else %} <td style="padding:0 15px 0 15px;">{{ value.data_value }} {% endif %}</td>
             {% if forloop..last %}
@@ -86,6 +87,7 @@
             {% else %}
               {% if forloop.counter|divisibleby:"3" %}
                 </tr>
+                <tr>
               {% endif %}
             {% endif %}
           {% endfor %}
