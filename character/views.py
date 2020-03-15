@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from django.views.generic.list import ListView
-from .models import Character, CharacterData
+from .models import Character, CharacterData, UrlTable
 import feedparser
 from .forms import CharacterForm
 
@@ -32,6 +32,14 @@ class character_list_view(ListView):
         context = super().get_context_data(**kwargs)
         context['owner'] = self.request.GET.get('owner')
         context['feed'] = feedparser.parse("https://www.elderscrollsonline.com/en-us/rss/news/")
+        return context
+
+class url_list_view(ListView):
+    template_name = "url_list.html"
+    model = UrlTable
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         return context
 
 # def character_list(request):

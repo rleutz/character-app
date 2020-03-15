@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Character
+from .models import Character, UrlTable
 
 class CharacterForm(forms.ModelForm):
 
@@ -11,3 +11,9 @@ class CharacterForm(forms.ModelForm):
     class Meta:
         model = Character
         fields = ('name', 'character_main', 'mule_for', 'notes', 'image', 'group_role')
+
+class UrlForm(forms.ModelForm)
+
+    class Meta:
+        model = UrlTable
+        fields = ('url', 'title', 'description')
