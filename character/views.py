@@ -57,7 +57,7 @@ def url_new(request):
 
 def url_detail(request, pk):
     url = get_object_or_404(UrlTable, pk=pk)
-    return render(request, 'character/url_detail.html', {'url': url})
+    return render(request, 'character/url_list.html', {'url': url})
 
 def url_edit(request, pk):
     url = get_object_or_404(UrlTable, pk=pk)
@@ -66,7 +66,7 @@ def url_edit(request, pk):
         if form.is_valid():
             url = form.save(commit=False)
             post.save()
-            return redirect('url_detail', pk=url.pk)
+            return redirect('url_list', pk=url.pk)
     else:
         form = UrlForm(instance=url)
     return render(request, 'character/url_edit.html', {'form': form})
