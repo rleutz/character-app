@@ -35,16 +35,12 @@ class character_list_view(ListView):
         return context
 
 class url_list_view(ListView):
-    template_name = "url_list.html"
+    template_name = "character/url_list.html"
     model = UrlTable
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-
-# def character_list(request):
-#     characters = Character.objects.all().order_by('slug')
-#     return render(request, 'character/character_list.html', {'characters': characters})
 
 def character_detail(request, pk):
     character = Character.objects.get(pk=pk)
