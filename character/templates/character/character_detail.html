@@ -1,6 +1,5 @@
 {% extends 'character/base.html' %}
 {% load octicons %}
-{% load deslug %}
 
 {% block content %}
 
@@ -26,7 +25,7 @@
           <td style="padding:0 15px 0 15px;" colspan="2"><a class="btn btn-dark btn-block" href="{% url 'character_edit' pk=character.pk %}">Edit</a></td>
         </tr>
         <tr>
-          <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ character.slug|deslug|title }}</td>
+          <td style="padding:0 15px 0 15px;"><b>Name</b></td> <td style="padding:0 15px 0 15px;">{{ character.name }}</td>
         </tr>
         <tr>
           <td style="padding:0 15px 0 15px;"><b>Main</b></td> <td style="padding:0 15px 0 15px;">{% if character.character_main == 1 %}Yes{% else %}No{% endif %}</td>
