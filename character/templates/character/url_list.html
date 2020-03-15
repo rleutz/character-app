@@ -14,7 +14,7 @@
   </tr>
   {% for url in object_list %}
     <tr>
-      <td colspan="2"> <b> <a href="{% url 'url_detail', pk=url.pk %}"></a>{{url.title}}</b> </td>
+      <td colspan="2"> <b> <a href="{% url 'url_detail' pk=url.pk %}"></a>{{url.title}}</b> </td>
       <td colspan="2"> <b>{{url.description}}</b> </td>
       <td colspan="2"> <b>{{url.published_date}}</b> </td>
     </tr>
