@@ -3,7 +3,7 @@
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <table class="table table-sm">
+    <table>
       <th colspan="2"><h4>NEWS</h4></th>
       {% for entry in feed.entries|slice:":4" %}
         <tr>
