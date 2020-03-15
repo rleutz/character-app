@@ -5,9 +5,9 @@ from django.utils import timezone
 class Character(models.Model):
 
     GROUP_ROLE = (
-        ('D', 'DPS'),
-        ('T', 'Tank'),
-        ('H', 'Healer')
+        ('DPS', 'DPS'),
+        ('Tank', 'Tank'),
+        ('Healer', 'Healer')
     )
 
     slug = models.SlugField(unique=True, max_length=255)
@@ -25,7 +25,7 @@ class Character(models.Model):
     magicka = models.PositiveIntegerField(null=True, blank=True)
     stamina = models.PositiveIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to='profile_image', blank=True)
-    group_role = models.CharField(max_length=1, null=True, blank=True, choices=GROUP_ROLE)
+    group_role = models.CharField(max_length=6, null=True, blank=True, choices=GROUP_ROLE)
 
     def get_absolute_url(self):
         return reverse(
