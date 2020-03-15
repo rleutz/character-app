@@ -1,4 +1,5 @@
 {% extends 'character/base.html' %}
+{% load octicons %}
 
 {% block content %}
 
@@ -8,6 +9,7 @@
     <a href="{% url 'url_new' %}" class="btn btn-info" role="button">Add Location</a>
   </th>
   <tr>
+    <th>Edit</th>
     <th>Title</th>
     <th>Description</th>
     <th>Published Date</th>
@@ -15,6 +17,7 @@
   {% for url in object_list %}
     <tr>
       <td><a href="{{url.url}}" target="_blank">{{url.title}}</a></td>
+      <td><a class="btn btn-sm" href="{% url 'url_edit' pk=url.pk %}" role="button">{% octicon "pencil" %}</a></td>
       <td> <b>{{url.description}}</b> </td>
       <td> <b>{{url.published_date}}</b> </td>
     </tr>
