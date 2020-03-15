@@ -54,7 +54,7 @@ class CharacterData(models.Model):
 class UrlTable(models.Model):
     url = models.URLField()
     title = models.CharField(max_length=255, null=True, blank=True)
-    description = models.TextField(mull=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
