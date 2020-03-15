@@ -65,7 +65,7 @@ def url_edit(request, pk):
         form = UrlForm(request.POST, instance=url)
         if form.is_valid():
             url = form.save(commit=False)
-            post.save()
+            url.save()
             return redirect('url_list')
     else:
         form = UrlForm(instance=url)
