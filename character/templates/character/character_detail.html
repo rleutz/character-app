@@ -5,7 +5,7 @@
 
 <div class="container position-fixed">
   <div class="row justify-content-start">
-    <div class="col-4 bg-light">
+    <div class="col-4 bg-light overflow-auto">
       <table align="center">
         <tr>
           <td colspan=2 align=center>
@@ -74,7 +74,7 @@
         </tr>
       </table>
     </div>
-    <div class="col-8">
+    <div class="col-8 overflow-auto">
       {% regroup list by data_type_category as chardata_list %}
 
       <table class="table table-bordered table-hover">
