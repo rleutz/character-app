@@ -10,4 +10,4 @@ class CharacterForm(forms.ModelForm):
 
     class Meta:
         model = Character
-        fields = ('name', 'character_main', 'mule_for', 'notes', 'image')
+        fields = ('name', 'character_main', 'mule_for', 'notes', 'image', 'group_role')
