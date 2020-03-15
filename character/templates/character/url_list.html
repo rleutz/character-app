@@ -4,10 +4,12 @@
 
 <table>
   <th colspan="2"><h4>GOOD BOOKMARKS</h4></th>
-  <th>Title</th>
-  <th>URL</th>
-  <th>description</th>
-  <th>Published Date</th>
+  <tr>
+    <th>Title</th>
+    <th>URL</th>
+    <th>description</th>
+    <th>Published Date</th>
+  </tr>
   {% for url in object_list %}
     <tr>
       <td colspan="2"> <b>{{url.title}}</b> </td>
